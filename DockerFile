@@ -1,0 +1,17 @@
+FROM openjdk:8-jre-alpine
+WORKDIR /app
+
+# Cache dependencies to prevent re-download on src changes
+COPY ./pom.xml /app
+RUN mvn dependency:go-offline
+
+# Build/package application
+COPY ./src /app/src
+RUN mvn clean package -DskipTests
+
+
+FROM openjdk:8-jre-alpine AS prod
+COPY --from=app ./builder/target/receipt-processor-0.0.1.jar /
+
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/receipt-processor-0.0.1.jar"]
