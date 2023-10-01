@@ -4,7 +4,7 @@ Take-home backend challenge for - https://github.com/fetch-rewards/receipt-proce
 
 Refer to [docs](https://github.com/jweilhammer/receipt-processor-challenge/tree/main/docs) from the above for API SPEC and model definition.
 
-**Design decisions -**
+**Design decisions**
 
 This challenge was implemented as a REST API with Java 8, Spring Boot. To save the state across requests the ask was to use an in-memory solutions
 A static HashMap acts as the in-memory structure.
