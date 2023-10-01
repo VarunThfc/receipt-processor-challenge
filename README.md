@@ -5,22 +5,23 @@ Take-home backend challenge for - https://github.com/fetch-rewards/receipt-proce
 Refer to [docs](https://github.com/jweilhammer/receipt-processor-challenge/tree/main/docs) from the above for API SPEC and model definition.
 
 **Design decisions -**
+
 This challenge was implemented as a REST API with Java 8, Spring Boot. To save the state across requests the ask was to use an in-memory solutions
 A static HashMap acts as the in-memory structure.
 
-The App adheres the required design components based on the requirements. It has controller and service class but doesn't use repository as we default to an in-memory store.
-Due to the lack of repository structure, there is no DTO classes. The request Objects are used for calculating the point and are saved in Receipt Object.
-Similarly, the rules to award points are written as static methods in the Command Class that could be wholly applied or applied each on its own if required.
-All the Constants are defined under utils package. 
+The App adheres to the required design components based on the requirements. It has a controller and service class but doesn't use a repository as we default to an in-memory store.
+Due to the lack of repository structure, there are no DTO classes. The request Objects are used for calculating the point and are saved in the Receipt Object.
+Similarly, the rules to award points are written as static methods in the Command Class that could be wholly applied or applied on its own if required.
+All the Constants are defined under the utils package. 
 
 Lombok is used to do basic code generations.
 
-All classes are unit tested with JUnit + Spring Boot testing utilities. PowerMock used to test the static dependency and features.
+All classes are unit-tested with JUnit + Spring Boot testing utilities. PowerMock is used to test the static dependency and features.
 
 
 Implicitly and Explicitly following design patterns are used - 
-Singleton - @controller, @service ,etc define a singleton object.
-Builder - @Builder is used to support Builder pattern via Lombok
+Singleton - @controller, @service,etc define a singleton object.
+Builder - @Builder is used to support the Builder pattern via Lombok
 
 **Requirements**
 * Java 8
