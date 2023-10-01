@@ -20,8 +20,8 @@ All classes are unit-tested with JUnit + Spring Boot testing utilities. PowerMoc
 
 
 Implicitly and Explicitly following design patterns are used - 
-Singleton - @controller, @service,etc define a singleton object.
-Builder - @Builder is used to support the Builder pattern via Lombok
+**Singleton** - @controller, @service,etc define a singleton object.
+**Builder** - @Builder is used to support the Builder pattern via Lombok
 
 **Requirements**
 * Java 8
