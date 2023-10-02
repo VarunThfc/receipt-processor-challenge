@@ -42,11 +42,11 @@ To run
 
 - ``docker run -d -p 8080:8080 receipt-processor:latest``
 
-For Running the test
+For** Running the test**
 - `` docker exec <containerId> mvn test``
 
 **Run Manually**
-if All the requirements are installed ( 
+if All the requirements are installed 
 
 - ``mvn package -DskipTests``
 - ``java -jar target/receipt-processor-0.0.1-SNAPSOT.jar``
