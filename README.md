@@ -40,18 +40,16 @@ Default port for receipt-processor is 8080, This can be updated from application
 
 To run 
 
-- ``docker run -ti  -p 8080:8080 receipt-processor:latest`` 
+- ``docker run -d -p 8080:8080 receipt-processor:latest``
+
+For Running the test
+- `` docker exec <containerId> mvn test``
 
 **Run Manually**
-if All the requirement are installed
+if All the requirements are installed ( 
 
 - ``mvn package -DskipTests``
 - ``java -jar target/receipt-processor-0.0.1-SNAPSOT.jar``
-
-**Running Tests**
-
-Tests are run as part of mvn pkg or mvn test
-
 
 
 
